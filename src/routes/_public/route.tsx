@@ -41,6 +41,11 @@ function PublicLayout() {
       to: "/friend-links" as const,
       id: "friend-links",
     },
+    {
+      label: "数字藏品",
+      href: "https://f.irlin.cn",
+      id: "nft",
+    },
   ];
 
   const logout = async () => {

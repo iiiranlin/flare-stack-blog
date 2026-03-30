@@ -31,15 +31,27 @@ export function Footer({ navOptions }: FooterProps) {
 
         {/* Minimalist Links */}
         <nav className="flex items-center gap-8 text-[11px] font-medium uppercase tracking-widest text-muted-foreground/60">
-          {navOptions.map((option) => (
-            <Link
-              key={option.id}
-              to={option.to}
-              className="hover:text-foreground transition-colors"
-            >
-              {option.label}
-            </Link>
-          ))}
+          {navOptions.map((option) =>
+            option.href ? (
+              <a
+                key={option.id}
+                href={option.href}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                {option.label}
+              </a>
+            ) : (
+              <Link
+                key={option.id}
+                to={option.to!}
+                className="hover:text-foreground transition-colors"
+              >
+                {option.label}
+              </Link>
+            ),
+          )}
           {siteConfig.social
             .filter((link) => link.url)
             .map((link, i) => {

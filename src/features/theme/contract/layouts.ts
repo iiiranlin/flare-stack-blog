@@ -6,7 +6,8 @@ import type { FileRoutesByTo } from "@/routeTree.gen";
 
 export interface NavOption {
   label: string;
-  to: keyof FileRoutesByTo;
+  to?: keyof FileRoutesByTo;
+  href?: string;
   id: string;
 }
 
